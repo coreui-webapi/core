@@ -2,6 +2,10 @@
 
 ### 개발환경 세팅 (windows)
 
+#### git
+
+https://git-scm.com/downloads
+
 #### nodejs
 
 https://nodejs.org/en/download/
