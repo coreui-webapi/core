@@ -26,6 +26,10 @@ https://fishcodelib.com/database.htm
 
 https://www.google.com/chrome/
 
+#### chrome CORS extension
+
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related
+
 ### 구동
 
 #### 첫 구동
