@@ -36,6 +36,7 @@ https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgc
 
 ```bash
 git clone http://github.com/kswgit/core
+cd core
 ```
 
 ```bash
