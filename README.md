@@ -37,7 +37,7 @@ git clone http://github.com/kswgit/core
 ```bash
 cd ui
 yarn
-yarn start
+yarn serve
 ```
 
 ```bash
@@ -51,7 +51,7 @@ yarn start
 
 ```bash
 cd ui
-yarn start
+yarn serve
 ```
 
 ```bash
