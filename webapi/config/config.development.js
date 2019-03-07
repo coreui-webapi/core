@@ -11,7 +11,7 @@ module.exports = {
             acquire: 30000,
             idle: 10000
         },
-        storage: `${__dirname}/../database.sqlite`,
+        storage: `${__dirname}/../database.sqlite.nosync`,
         operatorsAliases: false,
     }    
 }
