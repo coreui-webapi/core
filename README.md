@@ -35,7 +35,7 @@ https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgc
 #### 첫 구동
 
 ```bash
-git clone http://github.com/kswgit/core
+git clone http://github.com/coreui-webapi/core
 cd core
 ```
 
