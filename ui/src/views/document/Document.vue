@@ -3,6 +3,10 @@
     <b-card header-tag="header">
       <div slot="header">
         <i class="icon-drop"></i> 게시판
+        
+          <router-link to="/memo"><button type="button" value="write">글쓰기</button></router-link>
+          <router-view></router-view>
+        
       </div>
       <b-table responsive="sm" :items="items" :fields="fields" :current-page="currentPage" :per-page="perPage">
       </b-table>

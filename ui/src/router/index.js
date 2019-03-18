@@ -9,6 +9,8 @@ const Dashboard = () => import('@/views/Dashboard')
 
 const Document = () => import('@/views/document')
 
+const Memo = () => import('@/views/memo/Memo')
+
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +33,11 @@ export default new Router({
           path: 'document',
           name: 'Document',
           component: Document
+        },
+        {
+          path: 'memo',
+          name: 'Memo',
+          component: Memo
         },
       ]
     }
