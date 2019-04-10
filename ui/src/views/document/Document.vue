@@ -12,8 +12,24 @@
           <router-view></router-view>
         
       </div>
-      <b-table responsive="sm" :items="items" :fields="fields" :current-page="currentPage" :per-page="perPage">
+      <b-table responsive="sm" :items="items" :fields="fields">
+     
+        <template slot="textButton" slot-scope="row"> 
+          <router-link :to="`/document/board/${row.item.id}`">
+            <b-button variant="outline-primary" size="sm">더보기</b-button>
+          </router-link>
+          <router-view></router-view>
+        </template>
+        <template slot="modButton" slot-scope="row">
+          <router-link :to="`/document/board/${row.item.id}`">
+           <b-button variant="outline-primary" size="sm">수정</b-button>
+          </router-link>
+        </template>
+        <template slot="delButton">
+          <b-button variant="outline-primary" size="sm">삭제</b-button>
+        </template>
       </b-table>
+      
     </b-card>
   </div>  
 </template>
@@ -29,6 +45,9 @@ export default {
     fields: [
       { key: 'id', label: 'id' },
       { key: 'title', label: '제목' },
+      { key: 'textButton', label:'', thStyle:{ width:'80px' } },
+      { key: 'modButton', label:'', thStyle:{ width:'80px' } },
+      { key: 'delButton', label:'', thStyle:{ width:'80px' } }
     ],
   }),
   mounted: async function () {

@@ -11,6 +11,10 @@ const Document = () => import('@/views/document')
 
 const Memo = () => import('@/views/memo/Memo')//memo창을 새로 만듦 그리고 router에서 import
 
+const Board = () => import('@/views/document/Board')
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -38,7 +42,16 @@ export default new Router({
           path: 'memo',
           name: 'Memo',
           component: Memo
-        },//새로 글쓰기 창 만들기
+        },
+        {
+          path: 'document/board',
+          name: 'Board',
+          component: Board
+        },
+        {
+          path: 'document/board/:id',
+          component: Board
+        }
       ]
     }
   ]
