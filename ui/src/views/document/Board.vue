@@ -39,12 +39,14 @@ export default {
     console.log('api', api)
     const rs = await api.document.get();
     this.model = rs.data;
-    console.log(this.model)
+    
     this.model.map(item => {
       if(item.id.toString()===this.$route.params.id){
-        this.text = item
+        // this.text = item
+        this.model = item
       }
     })
+    console.log(this.model)
   }
 }
 </script>
