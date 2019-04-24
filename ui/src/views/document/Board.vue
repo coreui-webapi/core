@@ -4,14 +4,14 @@
       id="title"
       v-model="model.title"
       rows="1"
-      placeholder="제목"
-    >{{text.title}}</b-form-textarea>
+    
+    />
     <br>
     <b-form-textarea
       id="content"
       v-model="model.content"
       rows="8"
-      :placeholder="text.content"   
+      :placeholder="text.content"  
       />
     <br>
     <div style="float:right;">
@@ -38,9 +38,9 @@ export default {
   mounted: async function () {
     console.log('api', api)
     const rs = await api.document.get();
-    this.items = rs.data;
-
-    this.items.map(item => {
+    this.model = rs.data;
+    console.log(this.model)
+    this.model.map(item => {
       if(item.id.toString()===this.$route.params.id){
         this.text = item
       }
