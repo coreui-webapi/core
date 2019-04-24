@@ -7,7 +7,8 @@ const api = axios.create({
   });
 
 const document = {
-    get: () => api.get('/document')
+    get: () => api.get('/document'),
+    post: body => api.post('/document', body)
 }
 
 export default {

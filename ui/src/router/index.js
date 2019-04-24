@@ -4,13 +4,6 @@ import Router from 'vue-router'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
-// Views
-const Dashboard = () => import('@/views/Dashboard')
-
-const Document = () => import('@/views/document')
-
-const Memo = () => import('@/views/memo/Memo')
-
 Vue.use(Router)
 
 export default new Router({
@@ -27,17 +20,27 @@ export default new Router({
         {
           path: 'dashboard',
           name: 'Dashboard',
-          component: Dashboard
+          component: () => import('@/views/Dashboard')
         },
         {
           path: 'document',
           name: 'Document',
-          component: Document
+          component: () => import('@/views/document')
         },
         {
           path: 'memo',
           name: 'Memo',
-          component: Memo
+          component: () => import('@/views/memo/Memo')
+        },
+        {
+          path: 'doc',
+          name: 'Doc',
+          component: () => import('@/views/doc/Document'),
+        },
+        {
+          path: 'doc/writing',
+          name: 'Writing',
+          component: () => import('@/views/doc/Writing')
         },
       ]
     }

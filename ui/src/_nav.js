@@ -14,5 +14,10 @@ export default {
       url: '/document',
       icon: 'icon-drop'
     },
+    {
+      name: 'Doc',
+      url: '/doc',
+      icon: 'icon-drop'
+    },
   ]
 }
