@@ -4,6 +4,20 @@ import Router from 'vue-router'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
+<<<<<<< HEAD
+=======
+// Views
+const Dashboard = () => import('@/views/Dashboard')
+
+const Document = () => import('@/views/document')
+
+const Memo = () => import('@/views/memo/Memo')//memo창을 새로 만듦 그리고 router에서 import
+
+const Board = () => import('@/views/document/Board')
+
+
+
+>>>>>>> a4e691c9b032efd5e6864afc3d47e9a789712d58
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +56,15 @@ export default new Router({
           name: 'Writing',
           component: () => import('@/views/doc/Writing')
         },
+        {
+          path: 'document/board',
+          name: 'Board',
+          component: Board
+        },
+        {
+          path: 'document/board/:id',
+          component: Board
+        }
       ]
     }
   ]
