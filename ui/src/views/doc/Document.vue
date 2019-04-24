@@ -8,20 +8,24 @@
           </router-link>
       </div>
       <b-table responsive="sm" :items="items" :fields="fields" striped>
-        <template slot="showDetails" slot-scope="row">
-          <b-button size="sm" @click="toggleShow(row.item.id)" >
-            {{row.item.show }}
-            AA
-          </b-button> 
+        <template slot="show_details" slot-scope="row">
+           <b-button size="sm" @click="toggleShow(row.item.id)" class="mr-2">
+            {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
+          </b-button>
+          <b-form-checkbox v-model="row.detailsShowing" @change="toggleShow(row.item.id)">
+            Details via check
+          </b-form-checkbox>
         </template>
 
-        <template slot="details">
-          <b-card>
-            <b-row>
-              <b-col sm=3><b>title: </b></b-col>
-            </b-row>
-          </b-card>
-        </template>
+        <template slot="row-details" slot-scope="row">
+        <b-card>
+          <b-row class="mb-2">
+            <b-col sm="3" class="text-sm-right"><b>제목</b></b-col>
+            <b-col>{{ row.item.title }}</b-col>
+          </b-row>
+          <b-button size="sm" @click="toggleShow(row.item.id)">Hide Details</b-button>
+        </b-card>
+      </template>
       </b-table>
     </b-card>
   </div>  
@@ -38,7 +42,7 @@ export default {
     fields: [
       { key : 'id', label: 'id' },
       { key : 'title', label: '제목' },
-      { key : 'showDetails', label: 'Details' }
+      { key : 'show_details', label: 'Details' }
     ], 
   }),
   mounted: async function () {
@@ -46,17 +50,16 @@ export default {
     const rs = await api.document.get();
     this.items = rs.data;
     this.items.map(item => {
-      item.show =false;
+      item._showDetails =false;
     })
   },
   methods: {
     toggleShow(id){
-      console.log(id)
-      this.items.map(item => {
+      this.items = this.items.map(item => {
         if(item.id == id){
-          item.show = !item.show
-          console.log(item.show)
+          item._showDetails = !item._showDetails
         }
+        return item
       })
     }
   }

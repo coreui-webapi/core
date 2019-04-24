@@ -8,11 +8,7 @@ const api = axios.create({
 
 const document = {
     get: () => api.get('/document'),
-<<<<<<< HEAD
-    post: body => api.post('/document', body)
-=======
     post: body => api.post('/document',body)
->>>>>>> a4e691c9b032efd5e6864afc3d47e9a789712d58
 }
 
 export default {

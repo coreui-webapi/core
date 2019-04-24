@@ -4,8 +4,6 @@ import Router from 'vue-router'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
-<<<<<<< HEAD
-=======
 // Views
 const Dashboard = () => import('@/views/Dashboard')
 
@@ -17,7 +15,6 @@ const Board = () => import('@/views/document/Board')
 
 
 
->>>>>>> a4e691c9b032efd5e6864afc3d47e9a789712d58
 Vue.use(Router)
 
 export default new Router({
